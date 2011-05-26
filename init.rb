@@ -2,7 +2,7 @@ if RUBY_PLATFORM =~ /java/
   Dir[RAILS_ROOT + "/jars/*.jar"].each{|jar_file|
     require jar_file
     p "load jar: #{jar_file}"
-  }
+  } if File.exist? RAILS_ROOT + "/jars/*.jar"
   begin
     require 'java_side'
   rescue Exception => e
