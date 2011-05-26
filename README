@@ -1,0 +1,14 @@
+JavaSide
+=============
+
+Add java support for jruby on rails.
+
+ - maven support: third party jar dependency management, java class
+ - spring support: springframework added, xml load......
+
+Example
+=======
+
+rake java_side:add_spring
+
+Copyright (c) 2010 [name of plugin creator], released under the MIT license
