@@ -1,4 +1,5 @@
 require 'ftools'
+require 'fileutils'
 
 rails_root=File.dirname(__FILE__)+"/../../../"
 
