@@ -1,1 +1,1 @@
-require 'rails_spring'
+require 'java_side/rails_spring'

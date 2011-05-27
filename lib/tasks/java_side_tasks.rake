@@ -1,4 +1,16 @@
-# desc "Explaining what the task does"
-# task :java_side do
-#   # Task goes here
-# end
+namespace :java_side do
+  desc "编译maven项目，准备相应的jar和class，并通过warbler打包为war"
+  task :war => :clean_jars do
+    
+  end
+
+  desc "清理旧的jar文件"
+  task :clean_jars => :environment do
+    Dir["#{Rails.root}/jars/*.jar"].each{|f| FileUtils.rm f }
+  end
+
+  desc "打包java相关部分的jar文件"
+  task :jars => :clean_jars do
+    `mvn -f maven/pom.xml dependency:copy-dependencies`
+  end
+end
