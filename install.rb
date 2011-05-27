@@ -4,8 +4,8 @@ require 'fileutils'
 rails_root=File.expand_path __FILE__+"/../../../.."
 asset=File.expand_path __FILE__+'/../install_assets'
 
-Dir.mkdir rails_root+"/java/conf" unless File.exist? rails_root+"/java/conf"
-Dir.mkdir rails_root+"/java/jars" unless File.exist? rails_root+"/java/jars"
+FileUtils.mkdir_p rails_root+"/java/conf" unless File.exist? rails_root+"/java/conf"
+FileUtils.mkdir_p rails_root+"/java/jars" unless File.exist? rails_root+"/java/jars"
 FileUtils.mkdir_p rails_root+"/java/src/test/java" unless File.exist? rails_root+"/java/src/test/java"
 FileUtils.mkdir_p rails_root+"/java/src/main/java" unless File.exist? rails_root+"/java/src/main/java"
 
