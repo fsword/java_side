@@ -35,8 +35,7 @@ module JavaSide
           begin
             self.container = org.springframework.context.support.ClassPathXmlApplicationContext.new(file)
           rescue Exception => e
-            p "cannot find spring xml: #{e.message}"
-            self.container = org.springframework.context.support.FileSystemXmlApplicationContext.new("config/java/#{file}")
+            puts "cannot load spring xml: #{e.message}"
           end
           self
         end
