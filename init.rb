@@ -1,9 +1,9 @@
 if RUBY_PLATFORM =~ /java/
-  Dir[Rails.root + "/jars/*.jar"].each{|jar_file|
+  Dir[Rails.root + "java/jars/*.jar"].each{|jar_file|
     require jar_file
     p "load jar: #{jar_file}"
   } if File.exist? Rails.root + "/jars"
-  $CLASSPATH << "config/java/" if File.exist? Rails.root + "config/java"
+  $CLASSPATH << "java/conf/" if File.exist? Rails.root + "java/conf/"
   begin
     require 'java_side'
   rescue Exception => e

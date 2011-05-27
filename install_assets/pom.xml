@@ -20,7 +20,7 @@
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <configuration>
-                  <outputDirectory>../jars</outputDirectory>
+                  <outputDirectory>jars</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>

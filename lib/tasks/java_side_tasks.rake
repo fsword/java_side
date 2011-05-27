@@ -6,11 +6,11 @@ namespace :java_side do
 
   desc "清理旧的jar文件"
   task :clean_jars => :environment do
-    Dir["#{Rails.root}/jars/*.jar"].each{|f| FileUtils.rm f }
+    Dir["#{Rails.root}/java/jars/*.jar"].each{|f| FileUtils.rm f }
   end
 
   desc "打包java相关部分的jar文件"
   task :jars => :clean_jars do
-    `mvn -f maven/pom.xml dependency:copy-dependencies`
+    `mvn -f java/pom.xml dependency:copy-dependencies`
   end
 end
