@@ -1,6 +1,5 @@
 require 'ftools'
 require 'fileutils'
-require 'rails/tasks'
 
 rails_root=File.expand_path __FILE__+"/../../../.."
 asset=File.expand_path __FILE__+'/../install_assets'
