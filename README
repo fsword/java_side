@@ -6,9 +6,16 @@ Add java support for jruby on rails.
  - maven support: third party jar dependency management, java class
  - spring support: springframework added, xml load......
 
+Installation
+=============
+
+rails plugin install git://github.com/fsword/java_side.git
+modify application.rb, add this one.
+
+
 Example
 =======
 
-rake java_side:add_spring
+rake java_side:jars
 
-Copyright (c) 2010 [name of plugin creator], released under the MIT license
+Copyright (c) 2010 fsword, released under the MIT license

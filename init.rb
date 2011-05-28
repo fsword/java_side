@@ -8,7 +8,7 @@ if RUBY_PLATFORM =~ /java/
     p "add classpath: java/conf/"
   end
   begin
-    require 'java_side'
+    require 'java_side/rails_spring' if config.spring
   rescue Exception => e
     $stderr.puts "cannot load java classes - #{e.to_s}"
   end
