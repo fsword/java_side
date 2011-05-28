@@ -10,7 +10,8 @@ FileUtils.mkdir_p rails_root+"/java/src/test/java" unless File.exist? rails_root
 FileUtils.mkdir_p rails_root+"/java/src/main/java" unless File.exist? rails_root+"/java/src/main/java"
 
 %w{development test production}.each{|env|
-  File.copy(asset+'/springbeans.xml', "#{rails_root}/java/conf/springbeans_#{env}.xml",true)
+  dest_file = "#{rails_root}/java/conf/springbeans_#{env}.xml"
+  File.copy(asset+'/springbeans.xml', dest_file,true) unless File.exist? dest_file
 }
 
 File.copy(asset+'/pom.xml', rails_root+'/java') unless File.exist? rails_root+'/java/pom.xml'
