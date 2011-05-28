@@ -1,5 +1,6 @@
 require 'ftools'
 require 'fileutils'
+require 'rails/tasks'
 
 rails_root=File.expand_path __FILE__+"/../../../.."
 asset=File.expand_path __FILE__+'/../install_assets'
@@ -16,4 +17,4 @@ FileUtils.mkdir_p rails_root+"/java/src/main/java" unless File.exist? rails_root
 
 File.copy(asset+'/pom.xml', rails_root+'/java') unless File.exist? rails_root+'/java/pom.xml'
 
-p config
+puts "Files installed. You may invoke java_side:jars task first"
