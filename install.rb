@@ -16,4 +16,5 @@ FileUtils.mkdir_p rails_root+"/java/src/main/java" unless File.exist? rails_root
 
 File.copy(asset+'/pom.xml', rails_root+'/java') unless File.exist? rails_root+'/java/pom.xml'
 
-puts "Files installed. You may invoke java_side:jars task first"
+puts "Files installed."
+puts "rake java_side:jars"
