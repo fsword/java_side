@@ -16,6 +16,6 @@ FileUtils.mkdir_p rails_root+"/java/src/main/java" unless File.exist? rails_root
 
 File.copy(asset+'/pom.xml', rails_root+'/java') unless File.exist? rails_root+'/java/pom.xml'
 
-p Rails
-p config
-p self
+p 'debugger begin'
+debugger
+p 'debugger done'
