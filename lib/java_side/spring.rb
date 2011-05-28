@@ -30,7 +30,7 @@ module JavaSide
         end
 
         def init!
-          file = "springbeans_#{RAILS_ENV}.xml"
+          file = "springbeans_#{Rails.env}.xml"
           p "load #{file}"
           begin
             self.container = org.springframework.context.support.ClassPathXmlApplicationContext.new(file)
