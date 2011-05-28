@@ -35,7 +35,7 @@ module JavaSide
           begin
             self.container = org.springframework.context.support.ClassPathXmlApplicationContext.new(file)
           rescue NameError => name_error
-            puts "cannot load spring framework.Please check pom.xml and add springframework's library, then re-run: rake java_side:jars "
+            puts "[1m[33mCannot load spring framework[0m.\nPlease check [1m[35mpom.xml[0m and add springframework's library, then re-run: [1m[35mrake java_side:jars[0m"
           rescue Exception => e
             puts "unknown error: #{e.message}"
           end
