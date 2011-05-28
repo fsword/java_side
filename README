@@ -25,7 +25,7 @@ Springframework Support
     ...
   end
 
-2.check pom.xml to make sure it has springframework's dependency(it has added by default pom.xml).
+2.check java/pom.xml to make sure it has springframework's dependency(it has added by default pom.xml).
 3.run the task: rake java_side:jars
 
 - Usage
