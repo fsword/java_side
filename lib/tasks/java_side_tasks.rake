@@ -6,7 +6,8 @@ namespace :java_side do
   end
 
   desc "清理旧的jar文件"
-  task :clean_jars => :environment do
+  task :clean_jars do
+    require 'rails/all'
     Dir["#{Rails.root}/java/jars/*.jar"].each{|f| FileUtils.rm f }
   end
 
