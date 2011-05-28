@@ -4,13 +4,15 @@ if RUBY_PLATFORM =~ /java/
     p "load jar: #{jar_file}"
   } if File.exist? Rails.root + "java/jars"
   if File.exist? Rails.root + "java/conf/"
-    $CLASSPATH << "java/conf/"
+    $CLASSPATH = ($CLASSPATH || [])<< "java/conf/"
     p "add classpath: java/conf/"
   end
   begin
-    require 'java_side/spring' if config.spring
+    if config.respond_to? 'spring'
+      require 'java_side/spring' if config.spring
+    end
   rescue Exception => e
-    $stderr.puts "cannot load java classes - #{e.to_s}"
+    $stderr.puts "unknown error - #{e.to_s}"
   end
 else
   warn "java_side is only for use with JRuby"
