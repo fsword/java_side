@@ -1,7 +1,5 @@
 namespace :java_side do
 
-  task :default => :jars
-
   desc "编译maven项目，准备相应的jar和class，并通过warbler打包为war"
   task :war => :clean_jars do
     
