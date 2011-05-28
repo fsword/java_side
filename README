@@ -12,8 +12,11 @@ Installation
 rails plugin install git://github.com/fsword/java_side.git
 
 
-Add Springframework Support
-===========================
+Springframework Support
+=======================
+
+- Add support
+
 1.modify application.rb, and add a line like that:
 
   class Application < Rails::Application
@@ -25,7 +28,9 @@ Add Springframework Support
 2.check pom.xml to make sure it has springframework's dependency(it has added by default pom.xml).
 3.run the task: rake java_side:jars
 
-Then, you can use get_bean function on your model, like this:
+- Usage
+
+You can use get_bean function on your model, like this:
 
 class User < ActiveRecord::Base
   def doSth
@@ -34,5 +39,14 @@ class User < ActiveRecord::Base
   end
 end
 
+If you want to use your bean on other place, just include JavaSide::Spring:
+
+  Loading development environment (Rails 3.0.6)
+  jruby-1.5.6 :001 > include JavaSide::Spring
+   => Object 
+  jruby-1.5.6 :002 > x = get_bean 'sample'
+   => #<Java::JavaUtil::ArrayList:0x496d864e> 
+  jruby-1.5.6 :003 > x.length
+   => 3 
 
 Copyright (c) 2010 fsword, released under the MIT license

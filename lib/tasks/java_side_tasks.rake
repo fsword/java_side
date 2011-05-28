@@ -13,6 +13,10 @@ namespace :java_side do
 
   desc "打包java相关部分的jar文件"
   task :jars => :clean_jars do
-    `mvn -f java/pom.xml dependency:copy-dependencies`
+    command='mvn -f java/pom.xml dependency:copy-dependencies'
+    result=system(command)
+    if not result
+      puts "Failed: please check the maven system, command line: #{command}"
+    end
   end
 end
