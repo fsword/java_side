@@ -1,10 +1,12 @@
 if RUBY_PLATFORM =~ /java/
+  require 'java'
+
   Dir[Rails.root + "java/jars/*.jar"].each{|jar_file|
     require jar_file
     p "load jar: #{jar_file}"
   } if File.exist? Rails.root + "java/jars"
   if File.exist? Rails.root + "java/conf/"
-    $CLASSPATH = ($CLASSPATH || [])<< "java/conf/"
+    $CLASSPATH << "java/conf/"
     p "add classpath: java/conf/"
   end
   begin
