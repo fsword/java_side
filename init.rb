@@ -9,9 +9,20 @@ if RUBY_PLATFORM =~ /java/
     $CLASSPATH << "java/conf/"
     p "add classpath: java/conf/"
   end
+  if File.exist? Rails.root + "java/conf/"
+    $CLASSPATH << "java/conf/"
+    p "add classpath: java/conf/"
+  end
+
   begin
-    if config.respond_to? 'spring'
-      require 'java_side/spring' if config.spring
+    if (config.spring rescue nil)
+      require 'java_side/spring'
+      p 'spring supported'
+    end
+
+    if (Warbler.class rescue nil)
+      require 'java_side/warbler'
+      p 'warbler extended'
     end
   rescue Exception => e
     $stderr.puts "unknown error - #{e.to_s}"
