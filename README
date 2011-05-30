@@ -5,6 +5,7 @@ Add java support for jruby on rails.
 
  - maven support: third party jar dependency management, java class
  - spring support: springframework added, xml load......
+ - warbler compatible: you can use "warble" command to build your war
 
 Installation
 =============

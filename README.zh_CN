@@ -5,6 +5,7 @@ JavaSide
 
  - maven支持: 对rails项目中使用的第三方jar包，使用maven进行管理
  - spring支持: 对spring进行支持，在rails中使用已有的java服务
+ - 兼容warbler: 无须额外操作，只要执行 warble 命令，就可以得到正确的war文件
 
 Installation
 =============
