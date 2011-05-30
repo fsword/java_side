@@ -5,10 +5,7 @@ if RUBY_PLATFORM =~ /java/
     require jar_file
     p "load jar: #{jar_file}"
   } if File.exist? Rails.root + "java/jars"
-  if File.exist? Rails.root + "java/conf/"
-    $CLASSPATH << "java/conf/"
-    p "add classpath: java/conf/"
-  end
+
   if File.exist? Rails.root + "java/conf/"
     $CLASSPATH << "java/conf/"
     p "add classpath: java/conf/"
