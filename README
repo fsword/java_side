@@ -84,4 +84,14 @@ end  jruby-1.5.6 :001 > include JavaSide::Spring
   jruby-1.5.6 :003 > x.length
    => 3 
 
+Ignoration
+==========
+You can ignore this plugin by set environment - 
+
+  $ IGNORE_JAVA_SIDE=true rails c
+  java_side is ignored
+  Loading development environment (Rails 3.0.6)
+  jruby-1.5.6 :001 > 
+
+
 Copyright (c) 2010 fsword, released under the MIT license

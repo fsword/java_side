@@ -50,4 +50,13 @@ end
   jruby-1.5.6 :003 > x.length
    => 3 
 
+Ignoration
+==========
+用户还可以设置环境变量来忽略本插件的启动
+
+  $ IGNORE_JAVA_SIDE=true rails c
+  java_side is ignored
+  Loading development environment (Rails 3.0.6)
+  jruby-1.5.6 :001 > 
+
 Copyright (c) 2010 fsword, released under the MIT license
