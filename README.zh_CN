@@ -13,6 +13,18 @@ Installation
 rails plugin install git://github.com/fsword/java_side.git
 
 
+Maven Support
+=============
+使用第三方java类库时，只需要修改如下位置的pom文件即可:
+
+$ vim $RAILS_ROOT/java/pom.xml
+
+然后执行rake任务
+
+$rake java_side:jars
+
+此时，相关的依赖jar包将被放在 $RAILS_ROOT/java/jars 目录下，并在rails启动时被自动装载起来。同时，如果你使用warbler 任务打包，那么这些jar文件也将会被拷贝进你最终的war包
+
 Springframework Support
 =======================
 
@@ -44,11 +56,11 @@ end
 
   Loading development environment (Rails 3.0.6)
   jruby-1.5.6 :001 > include JavaSide::Spring
-   => Object 
-  jruby-1.5.6 :002 > x = get_bean 'sample'
-   => #<Java::JavaUtil::ArrayList:0x496d864e> 
-  jruby-1.5.6 :003 > x.length
-   => 3 
+  => Object 
+  jruby-1.5.6 :002 > x = get_bean 'your_bean_id'
+  => #<Java::......:0x496d864e>
+  jruby-1.5.6 :003 > x.invokeTheService
+  => ......
 
 Ignoration
 ==========
