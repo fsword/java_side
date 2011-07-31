@@ -6,6 +6,7 @@ module JavaSide
 
         def after_configure
           old_after_configure
+          config.dirs = %w(app config db lib log vendor tmp)
           config.java_libs     += FileList["java/jars/*.jar"]
           config.java_classes = FileList["java/conf/**/*"]
           config.pathmaps.java_classes << "%{java/conf/,}p"
